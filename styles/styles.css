@@ -1,6 +1,16 @@
-.webside-main-header {
+body {
+  background-image: url('/assets/mainpage_background.png');
+  background-color: #e6e4e4;
+  background-attachment: fixed;
+  background-size: 70%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-blend-mode: color-burn;
+}
+
+.mainpage-header-text {
   transform: translateY(0) scale(1);
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
   font-size: 80px;
   text-align: center;
   position: center;
@@ -9,7 +19,7 @@
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
 }
 
-.main-header-background-image {
+.mainpage-banner-container {
   background-image: url('/assets/title_banner.jpg');
   background-size: cover;
   background-position: center;
@@ -18,12 +28,36 @@
   background-attachment: fixed;
   height: 600px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border: 10px solid #000000;
+  border: solid #000000;
+  border-radius: 10px;
 }
 
 .vanishing-header {
-  transform: translateY(150%) scale(0);
-  transition: transform 0.3s ease;
+  transform: translateY(300%) scale(0);
+  transition: transform 0.5s ease;
+}
+
+.mainpage-banner-menu {
+  background-color: #4b4d4e;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+.mainpage-banner-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #313335;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-size: 25px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.mainpage-banner-menu a:hover {
+  background-color: #6e6f70;
 }

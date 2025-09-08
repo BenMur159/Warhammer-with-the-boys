@@ -4,30 +4,47 @@ console.log('we are alive');
 mainPageInit();
 
 function mainPageInit() {
-  renderHeader();
+  renderMainpageBanner();
 }
 
-function renderHeader() {
-  const headerContainer = document.createElement('div');
-  headerContainer.classList.add('js-header-container');
-  console.log(headerContainer.classList);
+function renderMainpageBanner() {
+  const mainpageBannerWrapper = document.createElement('div');
+  mainpageBannerWrapper.classList.add('js-mainpage-banner-wrapper');
 
-  const headerContainerHTML = `
-    <div class="main-header-background-image">
-      <h1 class="webside-main-header js-main-header">Warhammer with the Boys</h2>
+  //TODO remove dummy scroll <div> if not needed anymore
+  const mainpageBannerWrapperHTML = `
+    <div class="mainpage-banner-container">
+      <h1 class="mainpage-header-text js-mainpage-header-text">Warhammer with the Boys</h1>
     </div>
+    <nav class="mainpage-banner-menu">
+
+      <a href="" class="mainpage-banner-link">Home</a>
+      <a href="" class="mainpage-banner-link">Painting</a>
+      <a href="" class="mainpage-banner-link">Games</a>
+      <a href="" class="mainpage-banner-link">Campains</a>
+      <a href="" class="mainpage-banner-link">Stats</a>
+      <a href="" class="mainpage-banner-link">Login</a>
+      
+    </nav>
     <div style="height: 2000px;"></div>
+    
   `;
 
-  headerContainer.innerHTML = headerContainerHTML;
-  document.body.append(headerContainer);
+  mainpageBannerWrapper.innerHTML = mainpageBannerWrapperHTML;
+  document.body.append(mainpageBannerWrapper);
+  setupScrollBehavior();
 }
 
-window.addEventListener('scroll', () => {
-  const mainHeader = document.querySelector(`.js-main-header`);
-  if (window.scrollY >= 200) {
-    mainHeader.classList.add('vanishing-header');
-  } else {
-    mainHeader.classList.remove('vanishing-header');
-  }
-});
+function setupScrollBehavior() {
+  const mainpageHeaderText = document.querySelector('.js-mainpage-header-text');
+
+  if (!mainpageHeaderText) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY >= 200) {
+      mainpageHeaderText.classList.add('vanishing-header');
+    } else {
+      mainpageHeaderText.classList.remove('vanishing-header');
+    }
+  });
+}
