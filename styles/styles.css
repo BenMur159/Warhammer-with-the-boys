@@ -1,4 +1,6 @@
 .webside-main-header {
+  transform: translateY(0) scale(1);
+  transition: transform 0.3s ease;
   font-size: 80px;
   text-align: center;
   position: center;
@@ -19,4 +21,9 @@
   justify-content: center;
   align-items: center;
   border: 10px solid #000000;
+}
+
+.vanishing-header {
+  transform: translateY(150%) scale(0);
+  transition: transform 0.3s ease;
 }
