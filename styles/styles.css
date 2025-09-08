@@ -1,0 +1,22 @@
+.webside-main-header {
+  font-size: 80px;
+  text-align: center;
+  position: center;
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.main-header-background-image {
+  background-image: url('/assets/title_banner.jpg');
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid #000000;
+}
