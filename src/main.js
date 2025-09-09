@@ -1,6 +1,19 @@
 'use strict';
 
 console.log('we are alive');
+
+const openLoginWindow = function () {
+  document.querySelector(`.overlay`).classList.remove('hidden');
+  document.querySelector(`.login-window`).classList.remove('hidden');
+  console.log('hello');
+};
+
+const closeLoginWindow = function () {
+  document.querySelector(`.overlay`).classList.add('hidden');
+  document.querySelector(`.login-window`).classList.add('hidden');
+  console.log('hello');
+};
+
 mainPageInit();
 
 function mainPageInit() {
@@ -13,6 +26,7 @@ function renderMainpageBanner() {
 
   //TODO remove dummy scroll <div> if not needed anymore
   const mainpageBannerWrapperHTML = `
+
     <div class="mainpage-banner-container">
       <h1 class="mainpage-header-text js-mainpage-header-text">Warhammer with the Boys</h1>
     </div>
@@ -23,9 +37,14 @@ function renderMainpageBanner() {
       <a href="" class="mainpage-banner-link">Games</a>
       <a href="" class="mainpage-banner-link">Campains</a>
       <a href="" class="mainpage-banner-link">Stats</a>
-      <a href="" class="mainpage-banner-link">Login</a>
+      <a class="mainpage-banner-link js-login-link">Login</a>
       
     </nav>
+
+    
+
+
+    <div class="overlay hidden"></div>
     <div style="height: 2000px;"></div>
     
   `;
@@ -33,6 +52,7 @@ function renderMainpageBanner() {
   mainpageBannerWrapper.innerHTML = mainpageBannerWrapperHTML;
   document.body.append(mainpageBannerWrapper);
   setupScrollBehavior();
+  initMainpageBannerLinks();
 }
 
 function setupScrollBehavior() {
@@ -47,4 +67,13 @@ function setupScrollBehavior() {
       mainpageHeaderText.classList.remove('vanishing-header');
     }
   });
+}
+
+function initMainpageBannerLinks() {
+  document
+    .querySelector(`.js-login-link`)
+    .addEventListener('click', openLoginWindow);
+  document
+    .querySelector(`.overlay`)
+    .addEventListener('click', closeLoginWindow);
 }
