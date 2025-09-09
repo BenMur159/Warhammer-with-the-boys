@@ -61,42 +61,6 @@ body {
   background-color: #6e6f70;
 }
 
-.login-window {
-  position: fixed;
-  resize: none;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 350px;
-  height: 180px;
-  background-image: url(/assets/login_window_background.jpg);
-  background-color: white;
-  padding: 1rem;
-  border-radius: 15px;
-  /*border: solid #ffd700;
-  border-width: 1px;*/
-  box-shadow: 0 0 20rem 5rem rgb(175, 112, 16);
-  z-index: 10;
-}
-
-.close-login-window {
-  font-size: 2rem;
-  font-weight: 600;
-  padding: 1.75rem 3.5rem;
-  margin: 5rem 2rem;
-  border: none;
-  background-color: #fff;
-  color: #444;
-  border-radius: 10rem;
-  cursor: pointer;
-}
-
-/*
-******************************
-*** LOGIN WINDOW CSS *********
-******************************
-*/
-
 .hidden {
   display: none;
 }
@@ -112,18 +76,38 @@ body {
   z-index: 5;
 }
 
+/*
+******************************
+*** LOGIN WINDOW CSS *********
+******************************
+*/
+
+.login-window {
+  position: fixed;
+  resize: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 180px;
+  background-image: url(/assets/login_window_background.jpg);
+  background-color: white;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20rem 5rem rgb(175, 112, 16);
+  z-index: 10;
+}
+
 .form-grid {
   display: grid;
   grid-template-columns: 70px 1fr; /* label column + input column */
   gap: 0.7rem 1.5rem; /* row and column spacing */
   align-items: center;
 }
-
 .form-grid label {
   text-align: left;
   font-weight: bold;
 }
-
 .form-grid input {
   padding: 0.5rem;
   width: 12rem;
@@ -146,43 +130,30 @@ body {
   background-color: rgb(252, 172, 172);
 }
 
-/*
-.login-window input,
-.login-window label {
-  width: 50%;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.login-window button {
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-left: 200px;
-  cursor: pointer;
-} */
-
 .login-frame {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  top: -50px;
+  left: -90px;
   width: 560px;
   pointer-events: none;
 }
 
 .login-seal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  top: 215px;
-  left: 330px;
+  position: absolute;
+  top: 180px;
+  left: 300px;
   width: 80px;
   height: auto;
   z-index: 20;
   pointer-events: none;
   animation: pulseGlow 2s infinite;
 }
+
+/*
+******************************
+********* EFFECTS ************
+******************************
+*/
 
 @keyframes pulseGlow {
   0% {

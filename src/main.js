@@ -41,9 +41,23 @@ function renderMainpageBanner() {
       
     </nav>
 
+    <div class="login-window hidden">
+      <h1>Login</h1>
+      <form class="login-form">
+        <div class="form-grid">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" required />
+
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+        <button class="btn-login" type="submit">Login</button>
+        <button type="submit">Register</button>
+      </form>
+      <img class="login-frame" src="/assets/imperial frame.png" />
+      <img class="login-seal" src="/assets/purety_seal_login.png" />
+    </div>
     
-
-
     <div class="overlay hidden"></div>
     <div style="height: 2000px;"></div>
     
